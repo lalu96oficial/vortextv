@@ -3,8 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>IPTV y VOD | VortexTV</title>
-  <meta name="description" content="Televisión en vivo, películas y series bajo demanda. Plan anual en VortexTV.">
+  <title>IPTV en vivo y bajo demanda | VortexTV</title>
+  <meta name="description" content="Más de 1.000 canales en vivo, deportes, películas y series. Prueba gratis 24 horas y contrata por WhatsApp. Pago con Bizum, PayPal o tarjeta.">
+  <link rel="canonical" href="https://morvehtv.com/">
+
+  <!-- Open Graph y Twitter Cards: vista previa al compartir en WhatsApp, Telegram y redes -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VortexTV">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="IPTV en vivo y bajo demanda | VortexTV">
+  <meta property="og:description" content="+1.000 canales, deportes y series. Prueba gratis 24 horas.">
+  <meta property="og:url" content="https://morvehtv.com/">
+  <meta property="og:image" content="https://morvehtv.com/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IPTV en vivo y bajo demanda | VortexTV">
+  <meta name="twitter:description" content="+1.000 canales, deportes y series. Prueba gratis 24 horas.">
+  <meta name="twitter:image" content="https://morvehtv.com/og.png">
+
   <!-- Seguridad: GitHub Pages no permite cabeceras propias, así que se aplica con meta.
        La web no carga nada externo: solo estilos y scripts incrustados. -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
@@ -205,6 +222,52 @@ h1, h2, h3 { line-height: 1.2; }
 .btn-wa small { font-size: .85rem; font-weight: 600; opacity: .92; }
 .wa-big .btn { display: inline-block; margin-top: 18px; padding: 16px 36px; font-size: 1.1rem; }
 
+/* Métodos de pago */
+.pagos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; margin-top: 28px; }
+.pagos-label { color: var(--muted); font-size: .9rem; margin-right: 4px; }
+.pago-tag {
+  padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--card); font-weight: 700; font-size: .85rem;
+}
+
+/* Selector de dispositivos */
+.selector { max-width: 760px; margin: 0 auto; }
+.opciones { border: 0; margin-bottom: 18px; }
+.opciones legend { font-weight: 700; margin-bottom: 10px; }
+.chip-btn {
+  padding: 10px 16px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--card); color: var(--text); font: inherit; font-weight: 600; cursor: pointer;
+  margin: 0 6px 8px 0; transition: box-shadow .2s, border-color .2s;
+}
+.chip-btn:hover { border-color: var(--brand-2); }
+.chip-btn.active {
+  border-color: var(--brand); background: linear-gradient(135deg, rgba(255,46,151,.2), rgba(34,211,238,.15));
+  box-shadow: var(--glow);
+}
+.pantallas { display: block; margin-bottom: 18px; font-weight: 600; }
+.pantallas select {
+  display: block; margin-top: 8px; padding: 12px 14px; width: 100%; max-width: 260px;
+  border-radius: 10px; border: 1px solid var(--border); background: var(--card); color: var(--text); font: inherit;
+}
+.pasos {
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 20px 22px; margin-bottom: 20px;
+}
+.pasos h3 { margin-bottom: 10px; }
+.pasos ol { padding-left: 20px; color: var(--muted); }
+.pasos li { margin: 6px 0; }
+.btn-block { display: block; width: 100%; }
+
+/* Botón flotante de WhatsApp */
+.wa-float {
+  position: fixed; right: 18px; bottom: 18px; z-index: 60;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 18px; border-radius: 999px; background: #25d366; color: #fff; font-weight: 800;
+  box-shadow: 0 6px 24px rgba(37,211,102,.5);
+}
+.wa-float:hover { transform: translateY(-2px); }
+.wa-float span { font-size: .95rem; }
+
 /* Devices */
 .devices { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
 .device {
@@ -265,18 +328,18 @@ h1, h2, h3 { line-height: 1.2; }
       <a href="#planes">Planes</a>
       <a href="#dispositivos">Dispositivos</a>
       <a href="#faq">FAQ</a>
-      <a href="#contacto" class="btn btn-small">Contratar</a>
+      <a href="#contacto" class="btn btn-small">Contactar</a>
     </nav>
   </header>
 
   <section class="hero" id="inicio">
     <div class="hero-inner">
       <span class="badge">IPTV + VOD</span>
-      <h1 id="heroTitulo">Canales en vivo, películas y series</h1>
+      <h1>Canales en vivo, películas y series</h1>
       <p class="lead" id="heroSlogan"></p>
       <div class="hero-cta">
-        <a href="#planes" class="btn btn-primary">Ver planes</a>
-        <a href="#contacto" class="btn btn-ghost">Pedir información</a>
+        <a id="waDemoHero" class="btn btn-primary" href="#" target="_blank" rel="noopener">Prueba gratis 24h</a>
+        <a href="#planes" class="btn btn-ghost">Ver planes</a>
       </div>
       <ul class="hero-stats">
         <li><strong>+1.000</strong> canales</li>
@@ -291,16 +354,28 @@ h1, h2, h3 { line-height: 1.2; }
     <p class="section-sub">Suscripción anual con acceso completo.</p>
     <div class="pricing" id="pricing"></div>
     <div class="wa-big" id="waPlanes"></div>
+    <div class="pagos" aria-label="Métodos de pago aceptados" id="pagos"></div>
   </section>
 
   <section class="section alt" id="dispositivos">
-    <h2>Compatible con tus dispositivos</h2>
-    <div class="devices">
-      <div class="device">📺<span>Smart TV</span></div>
-      <div class="device">📱<span>Android y iOS</span></div>
-      <div class="device">🔥<span>Fire TV</span></div>
-      <div class="device">💻<span>PC y Mac</span></div>
-      <div class="device">📡<span>Android TV</span></div>
+    <h2>Elige tu dispositivo</h2>
+    <p class="section-sub">Te explicamos cómo instalarlo en tu dispositivo.</p>
+    <div class="selector">
+      <fieldset class="opciones">
+        <legend>Dispositivo</legend>
+        <div id="dispositivoOpciones" class="chips"></div>
+      </fieldset>
+      <label class="pantallas">
+        Número de pantallas
+        <select id="pantallas">
+          <option value="1">1 pantalla</option>
+          <option value="2">2 pantallas</option>
+          <option value="3">3 pantallas</option>
+          <option value="4">4 pantallas</option>
+        </select>
+      </label>
+      <div class="pasos" id="pasos" aria-live="polite"></div>
+      <a id="waDispositivo" class="btn btn-primary btn-block" href="#" target="_blank" rel="noopener">Pedir instalación por WhatsApp</a>
     </div>
   </section>
 
@@ -317,6 +392,11 @@ h1, h2, h3 { line-height: 1.2; }
     </div>
   </section>
 
+  <a id="waFloat" class="wa-float" href="#" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+    <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.6-1.2.1-.2 0-.3 0-.4l-.7-1.8c-.2-.4-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c2.2.9 2.2.6 2.6.6a2.2 2.2 0 0 0 1.5-1 1.9 1.9 0 0 0 .1-1.1c-.1-.1-.2-.2-.4-.3z"/></svg>
+    <span>Escríbenos</span>
+  </a>
+
   <footer class="footer">
     <p id="footerNombre"></p>
   </footer>
@@ -324,8 +404,8 @@ h1, h2, h3 { line-height: 1.2; }
   <script>
 /*
   CONFIGURACIÓN DEL NEGOCIO
-  Edita este archivo para cambiar nombre, contacto, precios y catálogo.
-  No hace falta tocar el HTML ni el CSS.
+  Edita este archivo para cambiar nombre, contacto, precios y textos.
+  Después ejecuta build.ps1 para regenerar index.html.
 */
 window.SITE_CONFIG = {
   nombre: "VortexTV",
@@ -333,13 +413,16 @@ window.SITE_CONFIG = {
   // Número de WhatsApp con código de país, sin + ni espacios
   whatsapp: "34614467813",
   moneda: "€",
+  url: "https://morvehtv.com/",
 
-  // Mensaje que se envía por WhatsApp al pulsar "Contratar".
-  // Variables disponibles: {marca}, {plan}, {precio}
-  whatsappPlantilla: "Hola, quiero contratar el plan {plan} de {marca} ({precio}). ¿Cómo puedo empezar?",
-
-  // Mensaje del botón "Solicitar demo 24h". Variables: {marca}, {plan}
-  whatsappDemoPlantilla: "Hola, quiero solicitar una demo de 24 horas de {marca} (plan {plan}). ¿Me la podéis activar?",
+  // Mensajes predefinidos de WhatsApp.
+  // Variables: {marca}, {plan}, {precio}, {dispositivo}, {pantallas}
+  mensajes: {
+    general: "Hola, quiero información sobre {marca}.",
+    demo: "Hola, quiero solicitar una prueba gratuita de 24 horas de {marca}. ¿Me la podéis activar?",
+    plan: "Hola, quiero contratar el plan {plan} de {marca} ({precio}). ¿Cómo puedo empezar?",
+    dispositivo: "Hola, tengo {dispositivo} y quiero {pantallas} pantalla(s) con {marca}. ¿Cómo lo instalo?"
+  },
 
   planes: [
     {
@@ -352,12 +435,25 @@ window.SITE_CONFIG = {
     }
   ],
 
+  // Métodos de pago que se muestran junto a los planes
+  pagos: ["Bizum", "PayPal", "Tarjeta"],
+
   faq: [
     { p: "¿Cómo activo el servicio?", r: "Escríbenos por WhatsApp, elige tu plan y en poco tiempo te enviamos los datos de acceso." },
     { p: "¿En qué dispositivos funciona?", r: "Smart TV, Android TV, Fire TV, móvil, tablet y PC mediante una app compatible o reproductor IPTV." },
     { p: "¿Necesito una conexión rápida?", r: "Recomendamos al menos 10 Mbps para HD y 25 Mbps para 4K." },
     { p: "¿Cuánto dura la suscripción?", r: "El plan anual cubre 12 meses desde la activación." },
-    { p: "¿Qué formas de pago aceptáis?", r: "Los métodos que te indiquemos al contratar por WhatsApp." }
+    { p: "¿Qué formas de pago aceptáis?", r: "Bizum, PayPal y tarjeta. Te indicamos cómo pagar al contratar por WhatsApp." }
+  ],
+
+  // Opciones del selector de dispositivos
+  dispositivos: [
+    { id: "firetv", nombre: "Fire TV Stick", pasos: ["Enciende el Fire TV y conéctalo a internet.", "Instala la app que te enviaremos tras activar la prueba.", "Introduce los datos de acceso que te damos por WhatsApp."] },
+    { id: "samsung", nombre: "Smart TV Samsung", pasos: ["Conecta el televisor a internet.", "Busca la app en la tienda del televisor y ábrela.", "Introduce los datos de acceso que te damos por WhatsApp."] },
+    { id: "lg", nombre: "Smart TV LG", pasos: ["Conecta el televisor a internet.", "Busca la app en la tienda del televisor y ábrela.", "Introduce los datos de acceso que te damos por WhatsApp."] },
+    { id: "androidtv", nombre: "Android TV / Google TV", pasos: ["Conecta el dispositivo a internet.", "Instala la app que te enviaremos tras activar la prueba.", "Introduce los datos de acceso que te damos por WhatsApp."] },
+    { id: "movil", nombre: "Móvil iOS / Android", pasos: ["Descarga la app compatible con tu teléfono.", "Ábrela e introduce los datos de acceso.", "Empieza a ver tus canales y contenidos."] },
+    { id: "pc", nombre: "PC / Mac", pasos: ["Abre un reproductor IPTV compatible en tu ordenador.", "Añade la lista que te enviaremos por WhatsApp.", "Empieza a ver tus canales y contenidos."] }
   ]
 };
 
@@ -366,56 +462,93 @@ window.SITE_CONFIG = {
 (function () {
   const C = window.SITE_CONFIG;
   const $ = (sel) => document.querySelector(sel);
-
-  // ----- Textos generales -----
-  $("#logo").innerHTML = C.nombre.replace(/TV$/, "").trim() + "<span>TV</span>";
-  $("#heroTitulo").textContent = "Canales en vivo, películas y series";
-  $("#heroSlogan").textContent = C.slogan;
-  $("#footerNombre").textContent = "© " + new Date().getFullYear() + " " + C.nombre + ". Todos los derechos reservados.";
-  document.title = "IPTV y VOD | " + C.nombre;
-
-  const wa = "https://wa.me/" + C.whatsapp + "?text=" + encodeURIComponent("Hola, quiero información sobre " + C.nombre);
-  $("#waBtn").href = wa;
-
-  // ----- Planes -----
   const fmt = new Intl.NumberFormat("es-ES", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
-  // Enlace de WhatsApp con la plantilla personalizada del config.js
-  function waLink(p) {
-    const texto = C.whatsappPlantilla
-      .replace(/\{marca\}/g, C.nombre)
-      .replace(/\{plan\}/g, p.nombre)
-      .replace(/\{precio\}/g, fmt.format(p.precio) + " " + C.moneda);
+  // ----- Utilidades -----
+  function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
+  }
+
+  // Rellena las variables {marca}, {plan}, {precio}... de una plantilla
+  function rellenar(plantilla, vars) {
+    return Object.keys(vars).reduce(
+      (texto, clave) => texto.replace(new RegExp("\\{" + clave + "\\}", "g"), vars[clave]),
+      plantilla
+    );
+  }
+
+  // Enlace de WhatsApp con un mensaje predefinido
+  function waUrl(plantilla, vars) {
+    const texto = rellenar(plantilla, Object.assign({ marca: C.nombre }, vars || {}));
     return "https://wa.me/" + C.whatsapp + "?text=" + encodeURIComponent(texto);
   }
 
-  // Enlace de WhatsApp para pedir una demo de 24 horas
-  function demoLink(p) {
-    const texto = C.whatsappDemoPlantilla
-      .replace(/\{marca\}/g, C.nombre)
-      .replace(/\{plan\}/g, p.nombre);
-    return "https://wa.me/" + C.whatsapp + "?text=" + encodeURIComponent(texto);
-  }
+  // ----- Textos generales y WhatsApp -----
+  $("#logo").innerHTML = C.nombre.replace(/TV$/, "").trim() + "<span>TV</span>";
+  $("#heroSlogan").textContent = C.slogan;
+  $("#footerNombre").textContent = "© " + new Date().getFullYear() + " " + C.nombre + ". Todos los derechos reservados.";
 
-  // Botón grande: usa el plan destacado, o el primero si no hay ninguno
+  $("#waDemoHero").href = waUrl(C.mensajes.demo);
+  $("#waBtn").href = waUrl(C.mensajes.general);
+  $("#waFloat").href = waUrl(C.mensajes.general);
+
+  // ----- Planes -----
   const principal = C.planes.find((p) => p.destacado) || C.planes[0];
-  if (principal) {
-    $("#waPlanes").innerHTML = `
-      <a class="btn-wa" href="${waLink(principal)}" target="_blank" rel="noopener">
-        Contratar por WhatsApp
-        <small>Plan ${escapeHtml(principal.nombre)} · ${fmt.format(principal.precio)} ${escapeHtml(C.moneda)}</small>
-      </a>
-      <a class="btn btn-primary" href="${demoLink(principal)}" target="_blank" rel="noopener">Solicitar demo 24h</a>`;
-  }
 
-  $("#pricing").innerHTML = C.planes.map((p) => {
-    return `
+  $("#pricing").innerHTML = C.planes.map((p) => `
       <div class="plan ${p.destacado ? "destacado" : ""}">
         ${p.destacado ? '<span class="ribbon">Más elegido</span>' : ""}
         <h3>${escapeHtml(p.nombre)}</h3>
-        <div class="price">${fmt.format(p.precio)} ${C.moneda}<small> / ${escapeHtml(p.periodo)}</small></div>
-        <ul>${p.features.map((f) => `<li>${escapeHtml(f)}</li>`).join("")}</ul>      </div>`;
-  }).join("");
+        <div class="price">${fmt.format(p.precio)} ${escapeHtml(C.moneda)}<small> / ${escapeHtml(p.periodo)}</small></div>
+        <ul>${p.features.map((f) => `<li>${escapeHtml(f)}</li>`).join("")}</ul>
+      </div>`).join("");
+
+  if (principal) {
+    const precio = fmt.format(principal.precio) + " " + C.moneda;
+    $("#waPlanes").innerHTML = `
+      <a class="btn-wa" href="${waUrl(C.mensajes.plan, { plan: principal.nombre, precio: precio })}" target="_blank" rel="noopener">
+        Contratar por WhatsApp
+        <small>Plan ${escapeHtml(principal.nombre)} · ${escapeHtml(precio)}</small>
+      </a>
+      <a class="btn btn-primary" href="${waUrl(C.mensajes.demo)}" target="_blank" rel="noopener">Solicitar demo 24h</a>`;
+  }
+
+  $("#pagos").innerHTML = '<span class="pagos-label">Métodos de pago:</span>' +
+    C.pagos.map((m) => `<span class="pago-tag">${escapeHtml(m)}</span>`).join("");
+
+  // ----- Selector de dispositivos -----
+  const opciones = $("#dispositivoOpciones");
+  const pasos = $("#pasos");
+  const pantallas = $("#pantallas");
+  const waDisp = $("#waDispositivo");
+  let seleccionado = C.dispositivos[0];
+
+  function renderDispositivo() {
+    opciones.querySelectorAll("button").forEach((b) => {
+      const activo = b.dataset.id === seleccionado.id;
+      b.classList.toggle("active", activo);
+      b.setAttribute("aria-pressed", String(activo));
+    });
+    pasos.innerHTML = "<h3>Pasos rápidos: " + escapeHtml(seleccionado.nombre) + "</h3><ol>" +
+      seleccionado.pasos.map((s) => `<li>${escapeHtml(s)}</li>`).join("") + "</ol>";
+    waDisp.href = waUrl(C.mensajes.dispositivo, {
+      dispositivo: seleccionado.nombre,
+      pantallas: pantallas.value
+    });
+  }
+
+  opciones.innerHTML = C.dispositivos.map((d) =>
+    `<button type="button" class="chip-btn" data-id="${escapeHtml(d.id)}">${escapeHtml(d.nombre)}</button>`
+  ).join("");
+
+  opciones.addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-id]");
+    if (!btn) return;
+    seleccionado = C.dispositivos.find((d) => d.id === btn.dataset.id) || seleccionado;
+    renderDispositivo();
+  });
+  pantallas.addEventListener("change", renderDispositivo);
+  renderDispositivo();
 
   // ----- FAQ -----
   $("#faqList").innerHTML = C.faq.map((f) => `
@@ -435,10 +568,6 @@ window.SITE_CONFIG = {
     nav.classList.remove("open");
     toggle.setAttribute("aria-expanded", "false");
   }));
-
-  function escapeHtml(str) {
-    return String(str).replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
-  }
 })();
 
 </script>

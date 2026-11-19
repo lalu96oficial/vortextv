@@ -193,6 +193,52 @@ h1, h2, h3 { line-height: 1.2; }
 .btn-wa small { font-size: .85rem; font-weight: 600; opacity: .92; }
 .wa-big .btn { display: inline-block; margin-top: 18px; padding: 16px 36px; font-size: 1.1rem; }
 
+/* Métodos de pago */
+.pagos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; margin-top: 28px; }
+.pagos-label { color: var(--muted); font-size: .9rem; margin-right: 4px; }
+.pago-tag {
+  padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--card); font-weight: 700; font-size: .85rem;
+}
+
+/* Selector de dispositivos */
+.selector { max-width: 760px; margin: 0 auto; }
+.opciones { border: 0; margin-bottom: 18px; }
+.opciones legend { font-weight: 700; margin-bottom: 10px; }
+.chip-btn {
+  padding: 10px 16px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--card); color: var(--text); font: inherit; font-weight: 600; cursor: pointer;
+  margin: 0 6px 8px 0; transition: box-shadow .2s, border-color .2s;
+}
+.chip-btn:hover { border-color: var(--brand-2); }
+.chip-btn.active {
+  border-color: var(--brand); background: linear-gradient(135deg, rgba(255,46,151,.2), rgba(34,211,238,.15));
+  box-shadow: var(--glow);
+}
+.pantallas { display: block; margin-bottom: 18px; font-weight: 600; }
+.pantallas select {
+  display: block; margin-top: 8px; padding: 12px 14px; width: 100%; max-width: 260px;
+  border-radius: 10px; border: 1px solid var(--border); background: var(--card); color: var(--text); font: inherit;
+}
+.pasos {
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 20px 22px; margin-bottom: 20px;
+}
+.pasos h3 { margin-bottom: 10px; }
+.pasos ol { padding-left: 20px; color: var(--muted); }
+.pasos li { margin: 6px 0; }
+.btn-block { display: block; width: 100%; }
+
+/* Botón flotante de WhatsApp */
+.wa-float {
+  position: fixed; right: 18px; bottom: 18px; z-index: 60;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 18px; border-radius: 999px; background: #25d366; color: #fff; font-weight: 800;
+  box-shadow: 0 6px 24px rgba(37,211,102,.5);
+}
+.wa-float:hover { transform: translateY(-2px); }
+.wa-float span { font-size: .95rem; }
+
 /* Devices */
 .devices { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
 .device {
