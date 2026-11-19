@@ -1,0 +1,6 @@
+# Claves y secretos: nunca subir
+.env
+
+# Archivos locales de herramientas
+.claude/
+*.log

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IPTV y VOD | VortexTV</title>
+  <meta name="description" content="Televisión en vivo, películas y series bajo demanda. Plan anual en VortexTV.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <a href="#inicio" class="logo" id="logo">Vortex<span>TV</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav id="nav">
+      <a href="#planes">Planes</a>
+      <a href="#dispositivos">Dispositivos</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto" class="btn btn-small">Contratar</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-inner">
+      <span class="badge">IPTV + VOD</span>
+      <h1 id="heroTitulo">Canales en vivo, películas y series</h1>
+      <p class="lead" id="heroSlogan"></p>
+      <div class="hero-cta">
+        <a href="#planes" class="btn btn-primary">Ver planes</a>
+        <a href="#contacto" class="btn btn-ghost">Pedir información</a>
+      </div>
+      <ul class="hero-stats">
+        <li><strong>+1.000</strong> canales</li>
+        <li><strong>Deportes</strong> en directo</li>
+        <li><strong>24/7</strong> disponible</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="planes">
+    <h2>Planes</h2>
+    <p class="section-sub">Suscripción anual con acceso completo.</p>
+    <div class="pricing" id="pricing"></div>
+    <div class="wa-big" id="waPlanes"></div>
+  </section>
+
+  <section class="section alt" id="dispositivos">
+    <h2>Compatible con tus dispositivos</h2>
+    <div class="devices">
+      <div class="device">📺<span>Smart TV</span></div>
+      <div class="device">📱<span>Android y iOS</span></div>
+      <div class="device">🔥<span>Fire TV</span></div>
+      <div class="device">💻<span>PC y Mac</span></div>
+      <div class="device">📡<span>Android TV</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq" id="faqList"></div>
+  </section>
+
+  <section class="section cta-final" id="contacto">
+    <h2>¿Listo para empezar?</h2>
+    <p>Escríbenos y te ayudamos a elegir el plan ideal.</p>
+    <div class="hero-cta">
+      <a id="waBtn" class="btn btn-primary" href="#" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+      <a id="mailBtn" class="btn btn-ghost" href="#">Enviar email</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p id="footerNombre"></p>
+    <p class="legal">
+      Servicio de televisión por internet y contenido bajo demanda. Revisa las condiciones de uso y la política de privacidad antes de contratar.
+    </p>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
