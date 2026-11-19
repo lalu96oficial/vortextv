@@ -8,7 +8,6 @@ window.SITE_CONFIG = {
   slogan: "Todo lo que quieres ver, en un solo lugar.",
   // Número de WhatsApp con código de país, sin + ni espacios
   whatsapp: "34614467813",
-  email: "j81298647@gmail.com",
   moneda: "€",
 
   // Mensaje que se envía por WhatsApp al pulsar "Contratar".

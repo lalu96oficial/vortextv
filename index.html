@@ -314,7 +314,6 @@ h1, h2, h3 { line-height: 1.2; }
     <p>Escríbenos y te ayudamos a elegir el plan ideal.</p>
     <div class="hero-cta">
       <a id="waBtn" class="btn btn-primary" href="#" target="_blank" rel="noopener">Hablar por WhatsApp</a>
-      <a id="mailBtn" class="btn btn-ghost" href="#">Enviar email</a>
     </div>
   </section>
 
@@ -333,7 +332,6 @@ window.SITE_CONFIG = {
   slogan: "Todo lo que quieres ver, en un solo lugar.",
   // Número de WhatsApp con código de país, sin + ni espacios
   whatsapp: "34614467813",
-  email: "j81298647@gmail.com",
   moneda: "€",
 
   // Mensaje que se envía por WhatsApp al pulsar "Contratar".
@@ -378,7 +376,6 @@ window.SITE_CONFIG = {
 
   const wa = "https://wa.me/" + C.whatsapp + "?text=" + encodeURIComponent("Hola, quiero información sobre " + C.nombre);
   $("#waBtn").href = wa;
-  $("#mailBtn").href = "mailto:" + C.email + "?subject=" + encodeURIComponent("Información " + C.nombre);
 
   // ----- Planes -----
   const fmt = new Intl.NumberFormat("es-ES", { minimumFractionDigits: 2, maximumFractionDigits: 2 });

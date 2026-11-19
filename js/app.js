@@ -11,7 +11,6 @@
 
   const wa = "https://wa.me/" + C.whatsapp + "?text=" + encodeURIComponent("Hola, quiero información sobre " + C.nombre);
   $("#waBtn").href = wa;
-  $("#mailBtn").href = "mailto:" + C.email + "?subject=" + encodeURIComponent("Información " + C.nombre);
 
   // ----- Planes -----
   const fmt = new Intl.NumberFormat("es-ES", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
